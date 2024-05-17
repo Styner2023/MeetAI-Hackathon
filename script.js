@@ -3,8 +3,7 @@
  * based on the selected item from the left panel.
  *
  * @param {string} contentId - The ID of the selected content item.
- */
-function updateCenterPanel(contentId) {
+ */function updateCenterPanel(contentId) {
     const mainContent = document.getElementById('mainContent');
     const detailContent = document.getElementById('detailContent');
     const panel2Title = document.getElementById('panel2-title');
@@ -38,17 +37,17 @@ function updateCenterPanel(contentId) {
             mainContent.innerHTML = '<h1 class="text-3xl font-bold mb-4">Welcome to MeetAI-Hackathon</h1><p>Select a tile from the left panel to view the corresponding content.</p>';
             detailContent.innerHTML = '';
     }
+}
 
     // Add event listener to "Details" buttons in the center panel
-    const detailsButtons = mainContent.querySelectorAll('.details-btn');
-    detailsButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const challengeId = button.getAttribute('data-challenge');
-            console.log('Details button clicked for:', challengeId);
-            loadDetails(challengeId);
-        });
-    });
-}
+    // const detailsButtons = mainContent.querySelectorAll('.details-btn');
+    // detailsButtons.forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         const challengeId = button.getAttribute('data-challenge');
+    //         console.log('Details button clicked for:', challengeId);
+    //         loadDetails(challengeId);
+    //     });
+    // });
 
 /**
  * This function fetches the content from the specified HTML file and inserts it
@@ -67,12 +66,23 @@ function fetchContent(file, targetElement) {
         })
         .then(data => {
             targetElement.innerHTML = data;
+
+            // Add event listener to "Details" buttons in the center panel
+            const detailsButtons = targetElement.querySelectorAll('.details-btn');
+            detailsButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const challengeId = button.getAttribute('data-challenge');
+                    console.log('Details button clicked for:', challengeId);
+                    loadDetails(challengeId);
+                });
+            });
         })
         .catch(error => {
             console.error('Error fetching content:', error);
             targetElement.innerHTML = `<p>Error loading content: ${error.message}</p>`;
         });
-}/**
+}
+ /**
  * This function loads the details content into the detail panel based on the
  * selected detail item.
  *
