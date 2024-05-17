@@ -88,33 +88,8 @@ function fetchContent(file, targetElement) {
  *
  * @param {string} challengeId - The ID of the selected public challenge.
  */
-// function loadDetails(challengeId) {
-//     console.log('loadDetails function called for:', challengeId);
-//     const detailContent = document.getElementById('detailContent');
-//     detailContent.innerHTML = ''; // Clear the detail content
-
-//     // Find the specific challenge details based on the challengeId
-//     const challengeDetails = document.getElementById(challengeId);
-
-//     if (challengeDetails) {
-//         // Clone the challenge details element
-//         const clonedDetails = challengeDetails.cloneNode(true);
-
-//         // Update the detailContent div with the cloned challenge details
-//         detailContent.appendChild(clonedDetails);
-//     } else {
-//         detailContent.innerHTML = '<p aria-live="polite">No challenge details found.</p>';
-//     }
-// }
-
-
-// function loadDetails(challengeId) {
-//     const detailContent = document.getElementById('detailContent');
-//     detailContent.innerHTML = `<p>Challenge ID: ${challengeId}</p>`;
-// }
-
-
 function loadDetails(challengeId) {
+    console.log('loadDetails function called for:', challengeId);
     const detailContent = document.getElementById('detailContent');
     detailContent.innerHTML = ''; // Clear the detail content
 
@@ -131,6 +106,31 @@ function loadDetails(challengeId) {
         detailContent.innerHTML = '<p aria-live="polite">No challenge details found.</p>';
     }
 }
+
+
+// function loadDetails(challengeId) {
+//     const detailContent = document.getElementById('detailContent');
+//     detailContent.innerHTML = `<p>Challenge ID: ${challengeId}</p>`;
+// }
+
+
+// function loadDetails(challengeId) {
+//     const detailContent = document.getElementById('detailContent');
+//     detailContent.innerHTML = ''; // Clear the detail content
+
+//     // Find the specific challenge details based on the challengeId
+//     const challengeDetails = document.getElementById(challengeId);
+
+//     if (challengeDetails) {
+//         // Clone the challenge details element
+//         const clonedDetails = challengeDetails.cloneNode(true);
+
+//         // Update the detailContent div with the cloned challenge details
+//         detailContent.appendChild(clonedDetails);
+//     } else {
+//         detailContent.innerHTML = '<p aria-live="polite">No challenge details found.</p>';
+//     }
+// }
 
 
 // Event listener for DOMContentLoaded
