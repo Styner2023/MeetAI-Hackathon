@@ -81,13 +81,22 @@ function fetchContent(file, targetElement) {
 function loadDetails(challengeId) {
     console.log('loadDetails function called for:', challengeId);
     const detailContent = document.getElementById('detailContent');
+    detailContent.innerHTML = ''; // Clear the detail content
 
-    // Construct the file name based on the challengeId
-    const fileName = `${challengeId}-details.html`;
+    // Find the specific challenge details based on the challengeId
+    const challengeDetails = document.getElementById(challengeId);
 
-    // Fetch the challenge details from the specific HTML file and load it into the detailContent div
-    fetchContent(fileName, detailContent);
+    if (challengeDetails) {
+        // Clone the challenge details element
+        const clonedDetails = challengeDetails.cloneNode(true);
+
+        // Update the detailContent div with the cloned challenge details
+        detailContent.appendChild(clonedDetails);
+    } else {
+        detailContent.innerHTML = '<p aria-live="polite">No challenge details found.</p>';
+    }
 }
+
 
 // Event listener for DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
