@@ -7,11 +7,26 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        /* Custom styles for the panel widths */
+        .left-panel {
+            width: 20%;
+        }
+        .center-panel, .right-panel {
+            width: 40%;
+        }
+        .overflow-y-auto {
+            overflow-y: auto;
+        }
+        .overflow-y-scroll {
+            overflow-y: scroll;
+        }
+    </style>
 </head>
 <body class="font-sans antialiased">
     <div class="flex min-h-screen">
         <!-- Left Panel -->
-        <div class="w-1/4 bg-zinc-200 p-4">
+        <div class="left-panel bg-zinc-200 p-4 overflow-y-auto">
             <div class="title-box bg-green-100 p-4 mb-4">
                 <h2 class="text-xl font-bold">🚀 MeetAI-Hackathon 🏆</h2>
             </div>
@@ -24,7 +39,7 @@
         </div>
 
         <!-- Center Panel -->
-        <div class="w-1/2 p-4">
+        <div class="center-panel p-4">
             <div class="bg-white rounded-md shadow-md p-4 h-full overflow-y-auto">
                 <h2 id="panel2-title" class="text-2xl font-bold mb-4" aria-live="polite">Main Content</h2>
                 <div id="mainContent" aria-live="polite">
@@ -34,8 +49,8 @@
         </div>
 
         <!-- Right Panel -->
-        <div class="w-1/4 p-4">
-            <div class="bg-zinc-100 rounded-md shadow-md p-4 h-full overflow-y-auto" id="detailContent" aria-live="polite">
+        <div class="right-panel p-4">
+            <div class="bg-zinc-100 rounded-md shadow-md p-4 h-full overflow-y-scroll" id="detailContent" aria-live="polite">
                 <h2 class="text-xl font-bold mb-4">More Details</h2>
             </div>
         </div>

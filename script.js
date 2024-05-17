@@ -3,7 +3,8 @@
  * based on the selected item from the left panel.
  *
  * @param {string} contentId - The ID of the selected content item.
- */function updateCenterPanel(contentId) {
+ */
+function updateCenterPanel(contentId) {
     const mainContent = document.getElementById('mainContent');
     const detailContent = document.getElementById('detailContent');
     const panel2Title = document.getElementById('panel2-title');
@@ -37,17 +38,19 @@
             mainContent.innerHTML = '<h1 class="text-3xl font-bold mb-4">Welcome to MeetAI-Hackathon</h1><p>Select a tile from the left panel to view the corresponding content.</p>';
             detailContent.innerHTML = '';
     }
-}
 
     // Add event listener to "Details" buttons in the center panel
-    const detailsButtons = mainContent.querySelectorAll('.details-btn');
-    detailsButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const challengeId = button.getAttribute('data-challenge');
-            console.log('Details button clicked for:', challengeId);
-            loadDetails(challengeId);
+    setTimeout(() => { // Ensure the buttons are loaded before adding event listeners
+        const detailsButtons = mainContent.querySelectorAll('.details-btn');
+        detailsButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const challengeId = button.getAttribute('data-challenge');
+                console.log('Details button clicked for:', challengeId);
+                loadDetails(challengeId);
+            });
         });
-    });
+    }, 100);
+}
 
 /**
  * This function fetches the content from the specified HTML file and inserts it
@@ -82,36 +85,43 @@ function fetchContent(file, targetElement) {
             targetElement.innerHTML = `<p>Error loading content: ${error.message}</p>`;
         });
 }
- /**
+
+/**
  * This function loads the details content into the detail panel based on the
  * selected detail item.
  *
  * @param {string} challengeId - The ID of the selected public challenge.
  */
-// function loadDetails(challengeId) {
-//     console.log('loadDetails function called for:', challengeId);
-//     const detailContent = document.getElementById('detailContent');
-//     detailContent.innerHTML = ''; // Clear the detail content
-
-//     // Find the specific challenge details based on the challengeId
-//     const challengeDetails = document.getElementById(challengeId);
-
-//     if (challengeDetails) {
-//         // Clone the challenge details element
-//         const clonedDetails = challengeDetails.cloneNode(true);
-
-//         // Update the detailContent div with the cloned challenge details
-//         detailContent.appendChild(clonedDetails);
-//     } else {
-//         detailContent.innerHTML = '<p aria-live="polite">No challenge details found.</p>';
-//     }
-// }
-
 function loadDetails(challengeId) {
     const detailContent = document.getElementById('detailContent');
-    detailContent.innerHTML = `<p>Challenge ID: ${challengeId}</p>`;
-}
+    
+    // Clear the existing content
+    detailContent.innerHTML = '';
 
+    // Fetch the content from challenge-details.html
+    fetch('challenge-details.html')
+        .then(response => response.text())
+        .then(data => {
+            // Create a temporary element to hold the HTML
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = data;
+
+            // Find the specific challenge details
+            const challengeDetails = tempDiv.querySelector(`#${challengeId}`);
+            if (challengeDetails) {
+                // Clone the challenge details element
+                const clonedDetails = challengeDetails.cloneNode(true);
+                // Append the cloned details to the detailContent div
+                detailContent.appendChild(clonedDetails);
+            } else {
+                detailContent.innerHTML = '<p aria-live="polite">No challenge details found.</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching challenge details:', error);
+            detailContent.innerHTML = `<p>Error loading challenge details: ${error.message}</p>`;
+        });
+}
 
 // Event listener for DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
