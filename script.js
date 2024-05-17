@@ -82,15 +82,11 @@ function loadDetails(challengeId) {
     console.log('loadDetails function called for:', challengeId);
     const detailContent = document.getElementById('detailContent');
 
-    // Find the specific challenge details based on the challengeId
-    const challengeDetails = document.getElementById(challengeId);
+    // Construct the file name based on the challengeId
+    const fileName = `${challengeId}-details.html`;
 
-    if (challengeDetails) {
-        // Update the detailContent div with the challenge details
-        detailContent.innerHTML = challengeDetails.outerHTML;
-    } else {
-        detailContent.innerHTML = '<p aria-live="polite">No challenge details found.</p>';
-    }
+    // Fetch the challenge details from the specific HTML file and load it into the detailContent div
+    fetchContent(fileName, detailContent);
 }
 
 // Event listener for DOMContentLoaded
