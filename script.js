@@ -40,14 +40,14 @@
 }
 
     // Add event listener to "Details" buttons in the center panel
-    // const detailsButtons = mainContent.querySelectorAll('.details-btn');
-    // detailsButtons.forEach(button => {
-    //     button.addEventListener('click', () => {
-    //         const challengeId = button.getAttribute('data-challenge');
-    //         console.log('Details button clicked for:', challengeId);
-    //         loadDetails(challengeId);
-    //     });
-    // });
+    const detailsButtons = mainContent.querySelectorAll('.details-btn');
+    detailsButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const challengeId = button.getAttribute('data-challenge');
+            console.log('Details button clicked for:', challengeId);
+            loadDetails(challengeId);
+        });
+    });
 
 /**
  * This function fetches the content from the specified HTML file and inserts it
@@ -82,39 +82,14 @@ function fetchContent(file, targetElement) {
             targetElement.innerHTML = `<p>Error loading content: ${error.message}</p>`;
         });
 }
-//  /**
-//  * This function loads the details content into the detail panel based on the
-//  * selected detail item.
-// //  *
-// //  * @param {string} challengeId - The ID of the selected public challenge.
-// //  */
-// // function loadDetails(challengeId) {
-// //     console.log('loadDetails function called for:', challengeId);
-// //     const detailContent = document.getElementById('detailContent');
-// //     detailContent.innerHTML = ''; // Clear the detail content
-
-// //     // Find the specific challenge details based on the challengeId
-// //     const challengeDetails = document.getElementById(challengeId);
-
-// //     if (challengeDetails) {
-// //         // Clone the challenge details element
-// //         const clonedDetails = challengeDetails.cloneNode(true);
-
-// //         // Update the detailContent div with the cloned challenge details
-// //         detailContent.appendChild(clonedDetails);
-// //     } else {
-// //         detailContent.innerHTML = '<p aria-live="polite">No challenge details found.</p>';
-// //     }
-// // }
-
-
+ /**
+ * This function loads the details content into the detail panel based on the
+ * selected detail item.
+ *
+ * @param {string} challengeId - The ID of the selected public challenge.
+ */
 // function loadDetails(challengeId) {
-//     const detailContent = document.getElementById('detailContent');
-//     detailContent.innerHTML = `<p>Challenge ID: ${challengeId}</p>`;
-// }
-
-
-// function loadDetails(challengeId) {
+//     console.log('loadDetails function called for:', challengeId);
 //     const detailContent = document.getElementById('detailContent');
 //     detailContent.innerHTML = ''; // Clear the detail content
 
@@ -131,6 +106,11 @@ function fetchContent(file, targetElement) {
 //         detailContent.innerHTML = '<p aria-live="polite">No challenge details found.</p>';
 //     }
 // }
+
+function loadDetails(challengeId) {
+    const detailContent = document.getElementById('detailContent');
+    detailContent.innerHTML = `<p>Challenge ID: ${challengeId}</p>`;
+}
 
 
 // Event listener for DOMContentLoaded
