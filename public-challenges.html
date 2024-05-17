@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackathonChallenges</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="font-sans antialiased">
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold mb-4">Public Challenges</h1>
+
+        <!-- Public challenges list -->
+        <ul class="space-y-4">
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Online Behavior Analyzer for Public Profiles</h3>
+                <p class="text-gray-700">Utilize GPT-4o to analyze public social media profiles and provide insights on online behavior patterns, potential risks, and audience engagement.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="online-behavior-analyzer">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">AI-Powered Cake Baking Assistant</h3>
+                <p class="text-gray-700">An AI assistant that guides users through the cake-baking process, offering step-by-step instructions, troubleshooting tips, and recipe adjustments based on available ingredients.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="cake-baking-assistant">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Weekly Challenge Post Generator</h3>
+                <p class="text-gray-700">A platform that uses GPT-4o to generate creative and engaging weekly challenges for social media platforms, fitness groups, or hobby communities.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="weekly-challenge-generator">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Global Song Ranking System</h3>
+                <p class="text-gray-700">Utilize GPT-4o to curate and rank the best songs ever written in different languages and categorize top songs by living and deceased artists.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="song-ranking-system">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Technical Document Simplifier</h3>
+                <p class="text-gray-700">An AI tool that reads complex technical PDFs and translates the detailed information into layman's terms for better understanding by non-experts.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="document-simplifier">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Massive Book Listing and Categorization</h3>
+                <p class="text-gray-700">A system that uses GPT-4o to list, categorize, and summarize thousands of books within minutes, making it easy to discover and explore new literature.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="book-listing">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Temperature Data Analyzer Across the USA</h3>
+                <p class="text-gray-700">Develop a platform that leverages GPT-4o to analyze temperature data across various regions in the USA, providing insights and predictions for climate trends and anomalies.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="temperature-analyzer">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">AI-Powered Smart Contract Auditor for Blockchain</h3>
+                <p class="text-gray-700">Build a tool that uses GPT-4o to audit blockchain smart contracts, identifying vulnerabilities, optimizing code, and ensuring compliance with best practices.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="smart-contract-auditor">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Automated Restaurant Business Advisor</h3>
+                <p class="text-gray-700">Create an AI-driven advisor that helps aspiring restaurant entrepreneurs by providing tailored business plans, market analysis, and operational strategies using GPT-4o.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="restaurant-advisor">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Solar Activity Analysis Tool</h3>
+                <p class="text-gray-700">Develop an AI platform that uses GPT-4o to analyze solar activity data, predict solar events, and assess their potential impact on technology and the environment.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="solar-activity-tool">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Decentralized Content Moderation System</h3>
+                <p class="text-gray-700">Build a decentralized content moderation system on the Internet Computer using GPT-4o to automatically detect and review inappropriate content on decentralized applications (dApps).</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="content-moderation-system">Details</button>
+                </div>
+            </li>
+
+            <li class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-xl font-bold mb-2">Quantum Physics Explained: GPT-4o vs. GPT-4</h3>
+                <p class="text-gray-700">Create a comparative educational platform where GPT-4o and GPT-4 explain complex quantum physics concepts.</p>
+                <div class="mt-4 flex justify-end">
+                    <button class="vote-btn mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Vote</button>
+                    <button class="details-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-challenge="quantum-physics-explained">Details</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triple Panel Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="font-sans antialiased">
+    <div class="flex min-h-screen">
+        <!-- Left Panel -->
+        <div class="w-1/4 bg-zinc-200 p-4">
+            <div class="title-box bg-green-100 p-4 mb-4">
+                <h2 class="text-xl font-bold">🚀 MeetAI-Hackathon 🏆</h2>
+            </div>
+            <ul class="space-y-4" role="menu" aria-label="Content Navigation">
+                <li role="none"><button class="item w-full text-left bg-white rounded-md shadow-md p-4" data-name="public-challenges" role="menuitem">Public Challenges</button></li>
+                <li role="none"><button class="item w-full text-left bg-white rounded-md shadow-md p-4" data-name="event-recordings" role="menuitem">Event Recordings</button></li>
+                <li role="none"><button class="item w-full text-left bg-white rounded-md shadow-md p-4" data-name="guides-resources" role="menuitem">Guides & Resources</button></li>
+                <li role="none"><button class="item w-full text-left bg-white rounded-md shadow-md p-4" data-name="public-chat" role="menuitem">Public Chat</button></li>
+            </ul>
+        </div>
+
+        <!-- Center Panel -->
+        <div class="w-1/2 p-4">
+            <div class="bg-white rounded-md shadow-md p-4 h-full overflow-y-auto">
+                <h2 id="panel2-title" class="text-2xl font-bold mb-4" aria-live="polite">Main Content</h2>
+                <div id="mainContent" aria-live="polite">
+                    <p>Select an item from the left panel to see content here.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="w-1/4 p-4">
+            <div class="bg-zinc-100 rounded-md shadow-md p-4 h-full overflow-y-auto" id="detailContent" aria-live="polite">
+                <h2 class="text-xl font-bold mb-4">More Details</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

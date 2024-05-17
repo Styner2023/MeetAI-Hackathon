@@ -1,0 +1,113 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.container-fluid {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #fff;
+    color: #333;
+    width: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    color: #333;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #EBFAEB; /* Light green background on hover */
+    color: #fff; /* White text on hover */
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+}
+
+.content h1, .content h2 {
+    color: #333;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.detail-view {
+    width: 300px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: none;
+}
+
+.detail-view.active {
+    display: block;
+}
+
+.detail-view h2 {
+    color: #333;
+}
+
+/* Button styles */
+.btn-outline-primary.btn-sm {
+    border-color: #0EA27F; /* Change the border color to green */
+    color: #0EA27F; /* Optionally change the text color to green as well */
+}
+
+.btn-outline-primary.btn-sm:hover {
+    background-color: #0EA27F; /* Green background on hover */
+    color: #fff; /* White text on hover */
+    border-color: #0EA27F; /* Ensure the border color remains green on hover */
+}
+
+/* Jumbotron styles */
+.jumbotron {
+    background-color: #EBFAEB; /* Light green background color */
+    color: #333; /* Dark text color for better contrast */
+}
+
+/* Title box styles */
+.title-box {
+    background-color: #ebfaeb; /* Light green background color */
+    padding: 16px;
+    text-align: center;
+}
+
+/* Panel styles */
+.panel {
+    height: calc(100vh - 32px); /* Adjust the height as needed */
+    overflow-y: auto; /* Add scrolling functionality */
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Challenge Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="font-sans antialiased">
+    <div class="container mx-auto py-8">
+        <div id="challengeDetails"></div>
+    </div>
+
+    <script>
+        // Get the challengeId from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const challengeId = urlParams.get('challenge');
+
+        // Load the challenge details based on the challengeId
+        const challengeDetails = document.getElementById('challengeDetails');
+        switch (challengeId) {
+            case 'online-behavior-analyzer':
+                challengeDetails.innerHTML = `
+                    <h2 class="text-xl font-bold mb-2">Online Behavior Analyzer for Public Profiles</h2>
+                    <p class="text-gray-700 mb-4">Detailed description and requirements for the Online Behavior Analyzer for Public Profiles challenge go here.</p>
+                    <!-- Add more content as needed -->
+                `;
+                break;
+            case 'cake-baking-assistant':
+                challengeDetails.innerHTML = `
+                    <h2 class="text-xl font-bold mb-2">AI-Powered Cake Baking Assistant</h2>
+                    <p class="text-gray-700 mb-4">Detailed description and requirements for the AI-Powered Cake Baking Assistant challenge go here.</p>
+                    <!-- Add more content as needed -->
+                `;
+                break;
+            // Add cases for other challenges
+            default:
+                challengeDetails.innerHTML = '<p class="text-gray-700">No challenge details found.</p>';
+        }
+    </script>
+</body>
+</html>
